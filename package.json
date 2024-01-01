@@ -1,19 +1,32 @@
 {
   "name": "p14-react-modal-derrahi",
+  "description": "A React responsive modal component that displays a message with options",
+  "keywords": [
+    "react",
+    "component",
+    "modal",
+    "responsive"
+  ],
   "version": "0.1.0",
-  "private": true,
+  "main": "dist/Modal.js",
+  "module": "dist/Modal.js",
+  "files": [ 
+    "dist", 
+    "README.md" 
+  ],
+  "repository": {    
+    "type": "git",    
+    "url": "https://github.com/Halima-DERRAHI/p14-react-modal-derrahi"  
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && NODE_ENV=production npx babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,5 +47,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.7",
+    "@babel/preset-env": "^7.23.7",
+    "@babel/preset-react": "^7.23.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
