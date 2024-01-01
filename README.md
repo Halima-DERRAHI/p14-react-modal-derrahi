@@ -33,6 +33,7 @@ A reusable modal component that displays a message with options for user actions
   onClose={() => console.log('Modal closed')}
   onButtonClick={() => console.log('Button action')}
   className="your_css_class"
+  buttonColor="color"
 />
 
 ```
@@ -44,23 +45,37 @@ A reusable modal component that displays a message with options for user actions
 ### Usage
 
 ```jsx
-import React, { Component } from 'react'
-import Modal from 'p14-react-modal-derrahi'
+import React, { useState } from 'react';
+import Modal from 'p14-react-modal-derrahi';
 
-class Example extends Component {
-  render() {
-    return (
-      <Modal
-        icon="url_for_your_icon"
-        message="Your message here"
-        buttonText="Button text"
-        onClose={() => console.log('Modal closed')}
-        onButtonClick={() => console.log('Button action')}
-        className="your_css_class"
-      />
-    )
-  }
+function Example() {
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => { setIsOpen(true) };
+  const closeModal = () => { setIsOpen(false) };
+
+  return (
+    <div>
+      <button onClick={openModal}>Open Modal</button>
+      {isOpen && (
+        <Modal
+          icon="url_for_your_icon"
+          message="Your message here"
+          buttonText="Button text"
+          onClose={closeModal}
+          onButtonClick={() => {
+            console.log('Button action');
+            closeModal();
+          }}
+          className="your_css_class"
+          buttonColor="color"
+        />
+      )}
+    </div>
+  );
 }
+
+export default Example;
+
 
 ```
 
