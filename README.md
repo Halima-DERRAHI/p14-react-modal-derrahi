@@ -1,6 +1,6 @@
 # p14-react-modal-derrahi
 
-[![NPM](https://img.shields.io/npm/v/p14-hrnet-react-modal.svg)](https://www.npmjs.com/package/p14-react-modal-derrahi) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/p14-react-modal-derrahi.svg)](https://www.npmjs.com/package/p14-react-modal-derrahi) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
