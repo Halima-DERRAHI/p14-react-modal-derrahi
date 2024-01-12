@@ -85,8 +85,8 @@ export default Example;
 ## Peer Dependencies
 The p14-react-modal-derrahi component has the following peer dependencies:
 
-react ^18.2.0
-react-dom ^18.2.0
+- react ^18.2.0
+- react-dom ^18.2.0
 
 ## License
 
