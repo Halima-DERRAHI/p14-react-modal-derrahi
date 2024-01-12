@@ -2,6 +2,10 @@
 
 [![NPM](https://img.shields.io/npm/v/p14-react-modal-derrahi.svg)](https://www.npmjs.com/package/p14-react-modal-derrahi) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+<p align="center">
+  <img src="https://github.com/Halima-DERRAHI/p14-react-modal-derrahi/blob/main/exemple.png" alt="Modal Screenshot" />
+</p>
+
 ## Install
 
 ```bash
