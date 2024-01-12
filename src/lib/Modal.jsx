@@ -1,6 +1,19 @@
 import React, { useEffect } from 'react';
 import './modal.css';
 
+/**
+ * Reusable modal component.
+ * @param {object} props - The properties of the modal.
+ * @param {string} props.icon - Image for the icon.
+ * @param {string} props.message - Message displayed in the modal.
+ * @param {string} props.buttonText - Text for the action button.
+ * @param {Function} props.onClose - Callback to close the modal.
+ * @param {Function} props.onButtonClick - Callback for button action.
+ * @param {string} [props.buttonColor] - Background color for the action button.
+ * @param {string} [props.className] - CSS class to customize the modal.
+ * @returns {JSX.Element} Modal component.
+ */
+
 const Modal = ({ icon, message, buttonText, onClose, onButtonClick, buttonColor, className }) => {
   
     useEffect(() => {
