@@ -12,21 +12,10 @@ const Modal = ({ icon, message, buttonText, onClose, onButtonClick, buttonColor,
                 onButtonClick();
             }
         };
-
-        const handleTabKeyPress = (event) => {
-            if (event.key === 'Tab') {
-                event.preventDefault();
-                const buttonElement = document.querySelector('.modalButton');
-                buttonElement.focus();
-            }
-        };
-
         document.addEventListener('keydown', handleKeyPress);
-        document.addEventListener('keydown', handleTabKeyPress);
 
         return () => {
             document.removeEventListener('keydown', handleKeyPress);
-            document.removeEventListener('keydown', handleTabKeyPress);
         };
     }, [onButtonClick, onClose]);
 
@@ -34,7 +23,7 @@ const Modal = ({ icon, message, buttonText, onClose, onButtonClick, buttonColor,
         <div className="modalOverlay">
             <div className={className || 'modal'} tabIndex={-1}>
                 <div className="modalHeader">
-                    <span className="closeBtn" onClick={onClose}>&times;</span>
+                    <span className="closeBtn" onClick={onClose} tabIndex={0}>&times;</span>
                 </div>
                 <div className="modalBody">
                     <span>{message}</span>
