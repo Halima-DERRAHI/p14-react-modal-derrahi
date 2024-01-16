@@ -1,5 +1,18 @@
 import React, { useEffect } from 'react';
 import './modal.css';
+
+/**
+ * Reusable modal component.
+ * @param {object} props - The properties of the modal.
+ * @param {string} props.icon - Image for the icon.
+ * @param {string} props.message - Message displayed in the modal.
+ * @param {string} props.buttonText - Text for the action button.
+ * @param {Function} props.onClose - Callback to close the modal.
+ * @param {Function} props.onButtonClick - Callback for button action.
+ * @param {string} [props.buttonColor] - Background color for the action button.
+ * @param {string} [props.className] - CSS class to customize the modal.
+ * @returns {JSX.Element} Modal component.
+ */
 import { jsx as _jsx } from "react/jsx-runtime";
 import { jsxs as _jsxs } from "react/jsx-runtime";
 const Modal = ({
@@ -19,18 +32,9 @@ const Modal = ({
         onButtonClick();
       }
     };
-    const handleTabKeyPress = event => {
-      if (event.key === 'Tab') {
-        event.preventDefault();
-        const buttonElement = document.querySelector('.modalButton');
-        buttonElement.focus();
-      }
-    };
     document.addEventListener('keydown', handleKeyPress);
-    document.addEventListener('keydown', handleTabKeyPress);
     return () => {
       document.removeEventListener('keydown', handleKeyPress);
-      document.removeEventListener('keydown', handleTabKeyPress);
     };
   }, [onButtonClick, onClose]);
   return /*#__PURE__*/_jsx("div", {
@@ -43,6 +47,7 @@ const Modal = ({
         children: /*#__PURE__*/_jsx("span", {
           className: "closeBtn",
           onClick: onClose,
+          tabIndex: 0,
           children: "\xD7"
         })
       }), /*#__PURE__*/_jsxs("div", {
